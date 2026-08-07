@@ -313,8 +313,8 @@ Contributions are welcome.
 
 Please read:
 
-- CONTRIBUTING.md
-- SECURITY.md
+- [CONTRIBUTING.md](CONTRIBUTING.md)
+- [SECURITY.md](SECURITY.md)
 
 before submitting issues or pull requests.
 
