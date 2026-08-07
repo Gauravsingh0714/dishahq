@@ -1,0 +1,102 @@
+{
+  "info": {
+    "_postman_id": "disha-phase-b-auth-collection",
+    "name": "Disha Platform — Phase B Authentication APIs",
+    "description": "Postman Collection for Phase B Authentication System testing (Register, Login, Profile).",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "variable": [
+    {
+      "key": "baseUrl",
+      "value": "http://localhost:5000/api",
+      "type": "string"
+    },
+    {
+      "key": "authToken",
+      "value": "",
+      "type": "string"
+    }
+  ],
+  "item": [
+    {
+      "name": "1. User Registration",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"fullName\": \"Alex Morgan\",\n  \"email\": \"alex.morgan@example.com\",\n  \"password\": \"Secret123!\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/auth/register",
+          "host": ["{{baseUrl}}"],
+          "path": ["auth", "register"]
+        },
+        "description": "Registers a new user account and returns user data + JWT token."
+      },
+      "response": []
+    },
+    {
+      "name": "2. User Login",
+      "event": [
+        {
+          "listen": "test",
+          "script": {
+            "exec": [
+              "var jsonData = pm.response.json();",
+              "if (jsonData.data && jsonData.data.token) {",
+              "    pm.collectionVariables.set('authToken', jsonData.data.token);",
+              "}"
+            ],
+            "type": "text/javascript"
+          }
+        }
+      ],
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"email\": \"alex.morgan@example.com\",\n  \"password\": \"Secret123!\"\n}"
+        },
+        "url": {
+          "raw": "{{baseUrl}}/auth/login",
+          "host": ["{{baseUrl}}"],
+          "path": ["auth", "login"]
+        },
+        "description": "Authenticates user credentials and sets token in collection variable."
+      },
+      "response": []
+    },
+    {
+      "name": "3. Get User Profile (Protected)",
+      "request": {
+        "method": "GET",
+        "header": [
+          {
+            "key": "Authorization",
+            "value": "Bearer {{authToken}}",
+            "type": "text"
+          }
+        ],
+        "url": {
+          "raw": "{{baseUrl}}/auth/profile",
+          "host": ["{{baseUrl}}"],
+          "path": ["auth", "profile"]
+        },
+        "description": "Retrieves profile details for the authenticated user using Bearer Token."
+      },
+      "response": []
+    }
+  ]
+}
