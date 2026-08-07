@@ -1,7 +1,6 @@
-import { createContext, useContext, useState, useEffect } from 'react';
+import { useState, useEffect, useCallback } from 'react';
+import { AuthContext } from './AuthContextObject';
 import { loginApi, registerApi, getProfileApi } from '../services/api';
-
-const AuthContext = createContext(null);
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(() => {
@@ -11,6 +10,15 @@ export const AuthProvider = ({ children }) => {
   const [token, setToken] = useState(() => localStorage.getItem('disha_token') || null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+
+  // Logout handler
+  const logout = useCallback(() => {
+    setUser(null);
+    setToken(null);
+    setError(null);
+    localStorage.removeItem('disha_token');
+    localStorage.removeItem('disha_user');
+  }, []);
 
   // Restore & verify session on initial mount
   useEffect(() => {
@@ -31,7 +39,7 @@ export const AuthProvider = ({ children }) => {
     };
 
     restoreSession();
-  }, [token]);
+  }, [token, logout]);
 
   // Login handler
   const login = async (email, password) => {
@@ -47,7 +55,7 @@ export const AuthProvider = ({ children }) => {
     } catch (err) {
       const msg = err.response?.data?.message || 'Login failed. Please try again.';
       setError(msg);
-      throw new Error(msg);
+      throw new Error(msg, { cause: err });
     }
   };
 
@@ -65,17 +73,8 @@ export const AuthProvider = ({ children }) => {
     } catch (err) {
       const msg = err.response?.data?.message || 'Registration failed. Please try again.';
       setError(msg);
-      throw new Error(msg);
+      throw new Error(msg, { cause: err });
     }
-  };
-
-  // Logout handler
-  const logout = () => {
-    setUser(null);
-    setToken(null);
-    setError(null);
-    localStorage.removeItem('disha_token');
-    localStorage.removeItem('disha_user');
   };
 
   const value = {
@@ -93,12 +92,4 @@ export const AuthProvider = ({ children }) => {
   return <AuthContext.Provider value={value}>{children}</AuthContext.Provider>;
 };
 
-export const useAuth = () => {
-  const context = useContext(AuthContext);
-  if (!context) {
-    throw new Error('useAuth must be used within an AuthProvider');
-  }
-  return context;
-};
-
-export default AuthContext;
+export default AuthProvider;

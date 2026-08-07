@@ -1,145 +1,341 @@
-# Disha — Your Career Direction
+# 🚀 Disha — Your Career Direction
 
-> **Phase A (Engineering Foundation): Complete & Approved**  
-> Disha is a modern, full-stack career navigation platform engineered to help students and professionals discover, plan, and execute their career journeys.
+> An AI-powered career navigation platform that helps students discover career paths, identify skill gaps, follow structured learning roadmaps, and track their learning journey.
 
----
-
-## Tech Stack
-
-### Frontend
-- **Framework:** React 19 + Vite 8
-- **Styling:** Tailwind CSS (v3.4)
-- **Routing:** React Router DOM (v7)
-- **HTTP Client:** Axios (v1.18)
-
-### Backend
-- **Runtime:** Node.js
-- **Framework:** Express.js (v5)
-- **Configuration:** Dotenv & CORS
-- **Database (Phase C):** MongoDB Atlas & Mongoose
-- **Authentication (Phase B):** JWT & BcryptJS
-
-### Infrastructure & Deployment
-- **Frontend Hosting:** Vercel
-- **Backend Hosting:** Render
+![License](https://img.shields.io/badge/License-MIT-blue.svg)
+![React](https://img.shields.io/badge/Frontend-React-61DAFB)
+![Node.js](https://img.shields.io/badge/Backend-Node.js-339933)
+![MongoDB](https://img.shields.io/badge/Database-MongoDB-47A248)
+![JWT](https://img.shields.io/badge/Auth-JWT-orange)
+![Status](https://img.shields.io/badge/Status-Active-success)
 
 ---
 
-## System Architecture & Directory Structure
+# 📖 About
 
-```
+Choosing the right career path can be overwhelming for students due to the abundance of information, unclear roadmaps, and lack of personalized guidance.
+
+**Disha** addresses this challenge by providing a centralized platform where students can:
+
+- Discover suitable career paths
+- Identify skill gaps
+- Receive personalized career recommendations
+- Follow structured learning roadmaps
+- Access curated learning resources
+- Track learning progress
+- Maintain learning streaks
+
+---
+
+# ✨ Features
+
+## Authentication
+
+- Secure User Registration
+- Secure Login
+- JWT Authentication
+- Protected Routes
+- Session Persistence
+- Password Hashing (bcrypt)
+- Logout
+
+---
+
+## Career Guidance
+
+- Career Assessment Quiz
+- Career Recommendation Engine
+- Skill Gap Analysis
+- Personalized Dashboard
+
+---
+
+## Learning Roadmaps
+
+- Step-by-step Roadmaps
+- Learning Milestones
+- Resource Recommendations
+- Progress Tracking
+- Weekly Streaks
+
+---
+
+## Dashboard
+
+- Career Match
+- Match Score
+- Skill Gap Summary
+- Progress Percentage
+- Current Learning Phase
+- Weekly Streak
+
+---
+
+# 🛠 Tech Stack
+
+## Frontend
+
+- React (Vite)
+- Tailwind CSS
+- React Router DOM
+- Axios
+
+## Backend
+
+- Node.js
+- Express.js
+
+## Database
+
+- MongoDB Atlas
+- Mongoose
+
+## Authentication
+
+- JWT
+- bcryptjs
+
+## Security
+
+- Helmet
+- Express Rate Limit
+- CORS
+- Environment Variables
+
+## Deployment
+
+Frontend
+
+- Vercel
+
+Backend
+
+- Render
+
+Database
+
+- MongoDB Atlas
+
+---
+
+# 📂 Project Structure
+
+```text
 disha/
+│
 ├── backend/
 │   ├── src/
-│   │   ├── config/          # Environment & Database configurations (db.js)
-│   │   ├── constants/       # Global HTTP & application constants
-│   │   ├── controllers/     # Route request handling controllers
-│   │   ├── middleware/      # Express middleware (errorMiddleware, notFoundMiddleware)
-│   │   ├── models/          # Database schema models (Mongoose)
-│   │   ├── routes/          # Central API route registration (healthRoutes, index.js)
-│   │   ├── services/        # Core business logic & external services
-│   │   ├── utils/           # Utility helpers (response.js)
-│   │   ├── validators/      # Request payload validation schemas
-│   │   └── server.js        # Express app entrypoint & middleware chain
-│   ├── .env.example         # Environment template for backend
-│   └── package.json
+│   │   ├── config/
+│   │   ├── constants/
+│   │   ├── controllers/
+│   │   ├── middleware/
+│   │   ├── models/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   ├── utils/
+│   │   ├── validators/
+│   │   └── server.js
+│   │
+│   ├── package.json
+│   └── .env.example
 │
 ├── frontend/
 │   ├── src/
-│   │   ├── assets/          # Static media & vectors
-│   │   ├── components/      # Shared reusable UI components
-│   │   ├── config/          # Centralized environment accessor (env.js)
-│   │   ├── constants/       # Application constants & navigation items
-│   │   ├── context/         # React Context providers (Auth, Theme, etc.)
-│   │   ├── features/        # Modular domain feature logic
-│   │   ├── hooks/           # Custom React hooks
-│   │   ├── layouts/         # Page layout frames (RootLayout.jsx)
-│   │   ├── lib/             # Third-party client initializers
-│   │   ├── pages/           # Route views (HomePage.jsx, NotFoundPage.jsx)
-│   │   ├── routes/          # Declarative AppRoutes tree (AppRoutes.jsx)
-│   │   ├── services/        # Axios API client & endpoints (api.js)
-│   │   ├── styles/          # Additional global CSS / theme definitions
-│   │   ├── utils/           # Helper functions
-│   │   ├── App.jsx          # Top-level application component
-│   │   ├── main.jsx         # React DOM root & BrowserRouter mount
-│   │   └── index.css        # Tailwind CSS directives
-│   ├── .env.example         # Environment template for frontend
-│   ├── tailwind.config.js   # Tailwind design tokens & content scopes
-│   ├── vite.config.js       # Vite bundler configuration
-│   └── package.json
+│   │   ├── assets/
+│   │   ├── components/
+│   │   ├── config/
+│   │   ├── constants/
+│   │   ├── context/
+│   │   ├── features/
+│   │   ├── hooks/
+│   │   ├── layouts/
+│   │   ├── lib/
+│   │   ├── pages/
+│   │   ├── routes/
+│   │   ├── services/
+│   │   └── utils/
+│   │
+│   ├── package.json
+│   └── .env.example
 │
-└── README.md
+├── README.md
+├── CONTRIBUTING.md
+├── SECURITY.md
+└── LICENSE
 ```
 
 ---
 
-## Local Development Setup
+# 🏗 Architecture
 
-### 1. Prerequisites
-- **Node.js**: `v18.0.0` or higher
-- **npm**: `v9.0.0` or higher
-
-### 2. Environment Configuration
-
-Copy the sample environment configuration files:
-
-#### Backend:
-```bash
-cp backend/.env.example backend/.env
+```text
+React Frontend
+       │
+       ▼
+Axios API Client
+       │
+       ▼
+Express.js API
+       │
+       ▼
+Authentication Middleware
+       │
+       ▼
+Controllers
+       │
+       ▼
+Services
+       │
+       ▼
+MongoDB Atlas
 ```
-Key variables:
-- `PORT`: Port number (default: `5000`)
-- `NODE_ENV`: Environment mode (`development` | `production`)
-- `CLIENT_URL`: Allowed CORS origin (`http://localhost:5173`)
 
-#### Frontend:
+---
+
+# 🚀 Getting Started
+
+## Clone Repository
+
 ```bash
-cp frontend/.env.example frontend/.env
+git clone https://github.com/<your-username>/disha.git
 ```
-Key variables:
-- `VITE_API_BASE_URL`: Base backend URL (`http://localhost:5000/api`)
 
-### 3. Installation & Running
+```bash
+cd disha
+```
 
-#### Start Backend:
+---
+
+## Backend Setup
+
 ```bash
 cd backend
 npm install
+```
+
+Create `.env`
+
+```env
+PORT=5000
+NODE_ENV=development
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_secure_secret
+CLIENT_URL=http://localhost:5173
+```
+
+Run
+
+```bash
 npm run dev
 ```
-The Express backend will start at `http://localhost:5000`. Query health status at `http://localhost:5000/api/health`.
 
-#### Start Frontend:
+---
+
+## Frontend Setup
+
 ```bash
 cd frontend
 npm install
+```
+
+Create `.env`
+
+```env
+VITE_API_BASE_URL=http://localhost:5000/api
+```
+
+Run
+
+```bash
 npm run dev
 ```
-The Vite dev server will start at `http://localhost:5173`.
 
 ---
 
-## Roadmap & Phase Status
+# 🔐 Security
 
-- [x] **Phase A — Engineering Foundation** (Complete)
-  - Modular directory architecture
-  - Express server, CORS, JSON body parsing & dynamic PORT configuration
-  - Dedicated 404 & Global Error handling middleware
-  - Centralized routing architecture & `/api/health` endpoint
-  - React 19 + React Router DOM v7 layout & page hierarchy
-  - Tailwind CSS primary design system integration
-  - Pre-configured Axios API client module
-  - Environment templates (`.env.example`) & comprehensive documentation
-- [ ] **Phase B — Authentication System** (Next)
-  - User model & schema validation
-  - Password hashing via BcryptJS
-  - JWT token generation & authentication middleware
-  - Frontend AuthContext, Login, and Registration views
-- [ ] **Phase C — Database Integration** (MongoDB Atlas)
-- [ ] **Phase D — Core Features** (Career Discovery, Roadmap Builder, Skill Assessment)
+Disha follows several security best practices:
+
+- JWT Authentication
+- bcrypt Password Hashing
+- Helmet Security Headers
+- Express Rate Limiting
+- Environment Variable Validation
+- Protected Routes
+- MongoDB Atlas Authentication
+- Secure API Architecture
+
+For more information, see [SECURITY.md](SECURITY.md).
 
 ---
 
-## License
-[ISC License](LICENSE)
+# 📊 Current Development Status
+
+| Phase | Status |
+|--------|--------|
+| Phase A – Engineering Foundation | ✅ Complete |
+| Phase B – Authentication | ✅ Complete |
+| Phase B.5 – Security Hardening | ✅ Complete |
+| Phase C – Career Domain Models | 🚧 In Progress |
+| Phase D – Career Assessment Quiz | ⏳ Planned |
+| Phase E – Recommendation Engine | ⏳ Planned |
+| Phase F – Skill Gap Analysis | ⏳ Planned |
+| Phase G – Roadmap System | ⏳ Planned |
+| Phase H – Dashboard Enhancements | ⏳ Planned |
+| Phase I – Progress Tracking | ⏳ Planned |
+| Phase J – Deployment & Production Polish | ⏳ Planned |
+
+---
+
+# 🧪 Available Scripts
+
+## Backend
+
+```bash
+npm run dev
+npm start
+```
+
+## Frontend
+
+```bash
+npm run dev
+npm run build
+npm run preview
+npm run lint
+```
+
+---
+
+# 🤝 Contributing
+
+Contributions are welcome.
+
+Please read:
+
+- CONTRIBUTING.md
+- SECURITY.md
+
+before submitting issues or pull requests.
+
+---
+
+# 📄 License
+
+This project is licensed under the MIT License.
+
+See the LICENSE file for details.
+
+---
+
+# 👨💻 Author
+
+**Arman Gaurav**
+
+---
+
+## ⭐ Support
+
+If you find this project helpful, consider giving it a ⭐ on GitHub.
+
+It helps others discover the project and motivates future development.

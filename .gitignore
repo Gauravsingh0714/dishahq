@@ -15,6 +15,7 @@ build/
 # Logs
 *.log
 
-# OS files
+# OS & Inspection files
 .DS_Store
 Thumbs.db
+folder-structure.txt

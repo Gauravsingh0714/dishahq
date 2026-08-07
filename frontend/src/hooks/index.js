@@ -1,5 +1,4 @@
-/**
- * Custom React Hooks barrel export.
- */
+import useAuth from './useAuth';
 
-export default {};
+export { useAuth };
+export default useAuth;
