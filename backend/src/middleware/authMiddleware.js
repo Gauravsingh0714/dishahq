@@ -48,6 +48,21 @@ const protect = async (req, res, next) => {
   }
 };
 
+/**
+ * Express Middleware enforcing Admin role authorization.
+ * Must be executed after `protect` middleware.
+ */
+const admin = (req, res, next) => {
+  if (req.user && req.user.role === "admin") {
+    return next();
+  }
+  return res.status(403).json({
+    status: "error",
+    message: "Forbidden: Admin access required",
+  });
+};
+
 module.exports = {
   protect,
+  admin,
 };

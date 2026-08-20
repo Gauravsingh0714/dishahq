@@ -1,6 +1,9 @@
-/**
- * Request body validators barrel export.
- * Express-validator / Zod schemas will be exported here.
- */
+const careerValidator = require("./careerValidator");
+const skillValidator = require("./skillValidator");
+const progressValidator = require("./progressValidator");
 
-module.exports = {};
+module.exports = {
+  ...careerValidator,
+  ...skillValidator,
+  ...progressValidator,
+};
