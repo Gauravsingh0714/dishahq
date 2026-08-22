@@ -7,14 +7,15 @@ const backendDeveloperCareerData = require("./careers/backendDeveloper");
 const fullStackDeveloperCareerData = require("./careers/fullStackDeveloper");
 const dataAnalystCareerData = require("./careers/dataAnalyst");
 const dataScientistCareerData = require("./careers/dataScientist");
+const machineLearningEngineerCareerData = require("./careers/machineLearningEngineer");
 
 /**
- * Idempotent Seed Runner Script for Disha Platform (Phase C6.4)
- * Seeds global skill taxonomy and canonical Frontend, Backend, Full Stack, Data Analyst, and Data Scientist career paths.
+ * Idempotent Seed Runner Script for Disha Platform (Phase C6.5)
+ * Seeds global skill taxonomy and canonical Frontend, Backend, Full Stack, Data Analyst, Data Scientist, and Machine Learning Engineer career paths.
  */
 async function runSeedScript() {
   console.log("===================================================");
-  console.log("STARTING DISHA PHASE C6.4 SEED EXECUTION");
+  console.log("STARTING DISHA PHASE C6.5 SEED EXECUTION");
   console.log("===================================================");
 
   try {
@@ -116,9 +117,10 @@ async function runSeedScript() {
     await upsertCareer(fullStackDeveloperCareerData);
     await upsertCareer(dataAnalystCareerData);
     await upsertCareer(dataScientistCareerData);
+    await upsertCareer(machineLearningEngineerCareerData);
 
     console.log("\n===================================================");
-    console.log("PHASE C6.4 SEED EXECUTION COMPLETED WITH 100% SUCCESS");
+    console.log("PHASE C6.5 SEED EXECUTION COMPLETED WITH 100% SUCCESS");
     console.log("===================================================");
   } catch (error) {
     console.error("❌ SEED EXECUTION FAILED:", error);
