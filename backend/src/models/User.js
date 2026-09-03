@@ -34,6 +34,26 @@ const userSchema = new mongoose.Schema(
       type: Boolean,
       default: false,
     },
+    assessment: {
+      isCompleted: { type: Boolean, default: false },
+      completedAt: { type: Date },
+      version: { type: String, default: "v1" },
+      signals: {
+        type: Map,
+        of: Number,
+        default: {},
+      },
+      answers: {
+        type: Map,
+        of: String,
+        default: {},
+      },
+    },
+    preferences: {
+      desiredSalary: { type: Number },
+      preferredWorkStyle: { type: String },
+      preferredCategory: { type: String },
+    },
   },
   {
     timestamps: true,
