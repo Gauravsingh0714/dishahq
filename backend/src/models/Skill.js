@@ -34,6 +34,7 @@ const skillSchema = new mongoose.Schema(
           "cloud_devops",
           "security",
           "soft_skills",
+          "design",
         ],
         message: "{VALUE} is not a valid skill category",
       },

@@ -242,6 +242,39 @@ const skillsSeedData = [
     difficulty: "advanced",
     prerequisiteSlugs: ["machine-learning", "docker"],
   },
+  // UI/UX Design Skills (Phase C6.11 Additions)
+  {
+    name: "UI/UX Design Principles",
+    slug: "design-principles",
+    category: "design",
+    description: "Fundamental visual and user experience design principles: visual hierarchy, typography, color theory, spacing, contrast, alignment, and Gestalt principles.",
+    difficulty: "beginner",
+    prerequisiteSlugs: [],
+  },
+  {
+    name: "User Research & Usability Testing",
+    slug: "user-research",
+    category: "design",
+    description: "User research methodologies, interviewing techniques, user personas, journey mapping, usability testing, and qualitative/quantitative research synthesis.",
+    difficulty: "beginner",
+    prerequisiteSlugs: [],
+  },
+  {
+    name: "Wireframing & Interactive Prototyping",
+    slug: "wireframing-prototyping",
+    category: "design",
+    description: "Translating user requirements into low-fidelity wireframes, high-fidelity UI layouts, interactive component prototypes, and micro-interaction specifications.",
+    difficulty: "intermediate",
+    prerequisiteSlugs: ["design-principles", "user-research"],
+  },
+  {
+    name: "Design Systems & Component Libraries",
+    slug: "design-systems",
+    category: "design",
+    description: "Architecting scalable UI design systems: design tokens, reusable component libraries, style guides, component states, and developer handoff specifications.",
+    difficulty: "intermediate",
+    prerequisiteSlugs: ["design-principles", "wireframing-prototyping"],
+  },
 ];
 
 module.exports = skillsSeedData;
